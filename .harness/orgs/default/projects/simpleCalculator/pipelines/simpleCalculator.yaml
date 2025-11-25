@@ -1,0 +1,50 @@
+pipeline:
+  name: simpleCalculator
+  identifier: simpleCalculator
+  projectIdentifier: simpleCalculator
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: account.githubConnector
+        repoName: simpleCalculator
+        build: <+input>
+  stages:
+    - stage:
+        name: build
+        identifier: build
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          caching:
+            enabled: true
+            override: true
+          buildIntelligence:
+            enabled: true
+          platform:
+            os: Linux
+            arch: Arm64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Snyk
+                  name: snyk Test
+                  identifier: snyk_Test
+                  spec:
+                    mode: orchestration
+                    config: default
+                    target:
+                      type: repository
+                      detection: auto
+                    advanced:
+                      log:
+                        level: info
+                      fail_on_severity: high
+                    privileged: true
+                    auth:
+                      access_token: <+secrets.getValue("snyk_token")>
