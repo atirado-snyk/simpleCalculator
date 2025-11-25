@@ -47,4 +47,4 @@ pipeline:
                       fail_on_severity: high
                     privileged: true
                     auth:
-                      access_token: <+secrets.getValue("snyk_token")>
+                      access_token: <+secrets.getValue("snyk-token")>
