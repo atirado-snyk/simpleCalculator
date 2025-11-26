@@ -146,15 +146,15 @@ namespace SimpleCalculator.Tests
         }
 
         [Test]
-        public void TestSquaredRootOf()
+        public void TestSquaredRoot()
         {
-            Assert.AreEqual(4, Calculator.Evaluate("square root of 16"));
+            Assert.AreEqual(4, Calculator.Evaluate("squaredroot 16"));
         }
 
         [Test]
-        public void TestCubeRootOf()
+        public void TestCubedRoot()
         {
-            Assert.AreEqual(3, Calculator.Evaluate("cube root of 27"));
+            Assert.AreEqual(3, Calculator.Evaluate("cubedroot 27"));
         }
     }
 }

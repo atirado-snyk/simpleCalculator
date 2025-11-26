@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace SimpleCalculator
 {
@@ -13,26 +14,16 @@ namespace SimpleCalculator
                 throw new ArgumentException("Input cannot be empty.");
             }
 
-            var parts = input.Split(new[] { ' ' }, 2);
-            if (parts.Length < 2 && !parts[0].ToLower().Contains("of"))
+            var regex = new Regex(@"^(?<operation>\w+)\s+(?<values>[\d,.-]+)$", RegexOptions.IgnoreCase);
+            var match = regex.Match(input);
+
+            if (!match.Success || string.IsNullOrWhiteSpace(match.Groups["operation"].Value) || string.IsNullOrWhiteSpace(match.Groups["values"].Value))
             {
                 throw new ArgumentException("Invalid input format.");
             }
 
-            string operation;
-            string[] stringValues;
-
-            if (parts.Length == 1 && parts[0].ToLower().Contains("of"))
-            {
-                var ofParts = parts[0].Split(new[] { " of " }, 2, StringSplitOptions.None);
-                operation = ofParts[0].ToLower();
-                stringValues = new[] { ofParts[1] };
-            }
-            else
-            {
-                operation = parts[0].ToLower();
-                stringValues = parts[1].Split(',');
-            }
+            string operation = match.Groups["operation"].Value.ToLower();
+            string[] stringValues = match.Groups["values"].Value.Split(',');
 
 
             if (stringValues.Length == 0)
@@ -110,10 +101,10 @@ namespace SimpleCalculator
                 case "atan":
                     return Math.Atan(values[0]);
                 case "sqrt":
-                case "square root of":
+                case "squaredroot":
                     return Math.Sqrt(values[0]);
                 case "cbrt":
-                case "cube root of":
+                case "cubedroot":
                     return Math.Cbrt(values[0]);
                 default:
                     throw new ArgumentException($"Invalid operation: {operation}");
