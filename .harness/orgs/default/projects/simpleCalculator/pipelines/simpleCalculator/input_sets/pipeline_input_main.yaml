@@ -1,0 +1,14 @@
+inputSet:
+  pipeline:
+    identifier: simpleCalculator
+    properties:
+      ci:
+        codebase:
+          build:
+            spec:
+              branch: main
+            type: branch
+  name: pipeline input -main
+  identifier: pipeline_input_main
+  orgIdentifier: default
+  projectIdentifier: simpleCalculator
