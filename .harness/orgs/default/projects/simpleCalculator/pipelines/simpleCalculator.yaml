@@ -33,11 +33,11 @@ pipeline:
             steps:
               - step:
                   type: Snyk
-                  name: snyk Test
+                  name: snyk open source test
                   identifier: snyk_Test
                   spec:
                     mode: orchestration
-                    config: default
+                    config: oss
                     target:
                       type: repository
                       detection: auto
@@ -45,6 +45,22 @@ pipeline:
                       log:
                         level: info
                       fail_on_severity: high
+                    privileged: true
+                    auth:
+                      access_token: <+secrets.getValue("snyk-token")>
+              - step:
+                  type: Snyk
+                  name: snyk code test
+                  identifier: snyk_code_test
+                  spec:
+                    mode: orchestration
+                    config: code
+                    target:
+                      type: repository
+                      detection: auto
+                    advanced:
+                      log:
+                        level: info
                     privileged: true
                     auth:
                       access_token: <+secrets.getValue("snyk-token")>
