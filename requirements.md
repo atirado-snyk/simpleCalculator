@@ -10,7 +10,7 @@ The calculator provides a text-based interface for performing mathematical calcu
 
 -   Performs mathematical operations on a list of values.
 -   Accepts text prompts as input.
--   Recognizes mathematical constants like pi, e, phi.
+-   Recognizes mathematical constants like pi, e and phi.
 -   Performs mathematical operations on simple equations like sin(x) * 10
 -   Provides error handling for invalid input and mathematical errors.
 -   Includes a suite of unit tests to verify functionality.
@@ -51,7 +51,7 @@ The calculator is built using:
 - Programming language: .NET C#
 - Regex-based user input validation
 - Unit test framework: MSTest
-- Scripting for mathematical expressions: Roslyn (sandboxing is not necessary) 
+- Scripting for simple equations: Roslyn (sandboxing is not necessary) 
 
 ## Error Handling
 
