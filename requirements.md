@@ -2,13 +2,16 @@
 
 ## Project Overview
 
-This document outlines the requirements for a simple command-line calculator application. The calculator is built using .NET C# and provides a text-based interface for performing mathematical calculations.
+This document outlines the requirements for a simple command-line calculator application. 
+
+The calculator provides a text-based interface for performing mathematical calculations.
 
 ## Features
 
 -   Performs mathematical operations on a list of values.
 -   Accepts text prompts as input.
--   Recognizes mathematical constants.
+-   Recognizes mathematical constants like pi, e, phi.
+-   Performs mathematical operations on simple equations like sin(x) * 10
 -   Provides error handling for invalid input and mathematical errors.
 -   Includes a suite of unit tests to verify functionality.
 
@@ -33,8 +36,6 @@ The calculator supports the following mathematical operations:
 | Arcsine | `Asin <n>` | Calculates the arcsine of a number. |
 | Arccosine | `Acos <n>` | Calculates the arccosine of a number. |
 | Arctangent | `Atan <n>` | Calculates the arctangent of a number. |
-| Square Root | `Sqrt <n>` or `square root of <n>` | Calculates the square root of a number. |
-| Cube Root | `Cbrt <n>` or `cube root of <n>` | Calculates the cube root of a number. |
 
 ## Constants
 
@@ -42,6 +43,15 @@ The calculator recognizes the following mathematical constants:
 
 -   `pi`: The mathematical constant π.
 -   `e`: The mathematical constant e (Euler's number).
+
+## Tech Stack
+
+The calculator is built using:
+
+- Programming language: .NET C#
+- Regex-based user input validation
+- Unit test framework: MSTest
+- Scripting for mathematical expressions: Roslyn (sandboxing is not necessary) 
 
 ## Error Handling
 
@@ -55,19 +65,4 @@ The calculator provides the following error handling:
 
 ## Unit Tests
 
-A suite of unit tests has been created to verify the functionality of the calculator. The tests cover all the supported operations, constants, and error handling scenarios.
-
-## How to Run
-
-To run the project, you need to have the .NET SDK installed. Then, you can run the following commands in the root of the project:
-
-```bash
-# Build the project
-dotnet build
-
-# Run the project
-dotnet run --project SimpleCalculator.csproj
-
-# Run the tests
-dotnet test
-```
+Create a suite of unit tests to verify the functionality of the calculator. The tests cover all the supported operations, constants, and error handling scenarios.
