@@ -13,9 +13,9 @@ namespace SimpleCalculator
             while (true)
             {
                 Console.Write("> ");
-                string input = Console.ReadLine();
+                string? input = Console.ReadLine();
 
-                if (input.Equals("exit", StringComparison.OrdinalIgnoreCase))
+                if (input == null || input.Equals("exit", StringComparison.OrdinalIgnoreCase))
                 {
                     break;
                 }
