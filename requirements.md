@@ -43,6 +43,7 @@ The calculator recognizes the following mathematical constants:
 
 -   `pi`: The mathematical constant π.
 -   `e`: The mathematical constant e (Euler's number).
+-   `phi`: The golden ratio
 
 ## Tech Stack
 
