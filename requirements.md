@@ -10,8 +10,8 @@ The calculator provides a text-based interface for performing mathematical calcu
 
 -   Performs mathematical operations on a list of values.
 -   Accepts text prompts as input.
--   Recognizes mathematical constants like pi, e, phi.
--   Performs mathematical operations on simple equations like sin(x) * 10
+-   Recognizes mathematical constants like pi and e.
+-   Performs mathematical operations on simple equations like sin(30) * 10
 -   Provides error handling for invalid input and mathematical errors.
 -   Includes a suite of unit tests to verify functionality.
 
@@ -43,7 +43,6 @@ The calculator recognizes the following mathematical constants:
 
 -   `pi`: The mathematical constant π.
 -   `e`: The mathematical constant e (Euler's number).
--   `phi`: The golden ratio
 
 ## Tech Stack
 
