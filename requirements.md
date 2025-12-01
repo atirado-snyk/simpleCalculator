@@ -49,9 +49,9 @@ The calculator recognizes the following mathematical constants:
 The calculator is built using:
 
 - Programming language: Python
+- Parsing and operating: py-expression-eval
 - Regex-based user input validation
 - Unit test framework: unittest
-- Scripting for mathematical expressions: py-expression-eval
 
 ## Error Handling
 
