@@ -39,9 +39,10 @@ jobs:
       run: |
         pytest
     # run snyk security testing
-    - name: Run Snyk Open Source Check
+    - name: Run Snyk Open Source Check and upload results to Snyk App
       uses: snyk/actions/python@master
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
         args: --severity-threshold=high
+        command: monitor
